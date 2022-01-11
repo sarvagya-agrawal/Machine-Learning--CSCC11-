@@ -1,0 +1,17 @@
+"""
+CSCC11 - Introduction to Machine Learning, Fall 2020, Assignment 2
+B. Chan, E. Franco, D. Fleet
+"""
+
+1. Can you reach a high accuracy on the test set using random forests? 
+
+No, it is challenging to reach a high level of accuracy using random forests for the test set for this data.
+
+2. Can you think of a better way to choose split functions as opposed to the method in _find_split?
+
+In the _find_split function, we can see that the split dimension is chosen at random, i.e. the variable we want to perform the split over is chosen at random and then the code in the function goes on to find the best threshold for that particular variable that was chosen at random. A better way to choose the split function would be to not choose the split dimension/split variable randomly. To elaborate, given the random subset of features assigned to a particular tree via the 'build' function in the random_forest.py file, instead of choosing a split variable randomly from the random subset of features, we can follow the algorithm: for every feature/variable in the random subset of features, and for each possible threshold for the particular feature, we compute information gain and choose the split variable/feature and threshold that maximize information gain. This may allow our random forest trees to choose split functions in a better way and allow our model to make stronger predictions.
+
+
+3. How does this challenge differ from that with the occupancy dataset?
+
+This challenge differs from that with occupancy dataset because of the way the dataset is, i.e., the Amazon dataset is what's called an 'ill posed' or 'underdetermined' dataset as it has much more variables/features than data points (number of data points (N) = 1500; number of attributes/variables (D) = 10,000) as compared to the occupancy dataset which is much more well structured (N = 20560; D = 7). An ill posed problem like the one with regards to the Amazon dataset can lead to Overfitting problems as there are less data points than variables, which in turn means that we have more possibility for split functions than we have data to fit in the trees. Such a problem is hard to control as our decision trees look at random subsets of features to split over for a small number of data points. This allows our resulting decision trees of the forest to model the noise along with the training data, this is simply due to the lack of data present as compared to the excessive amount of features. This modelling of the noise makes our model fit the training data strongly but at the same time, makes our model a weak predictor of the test data (model fits test data weakly. Therefore, to conclude, with the Amazon dataset we deal with challenge of overcoming effects of overfitting in our Random Forest model. 

@@ -1,0 +1,16 @@
+"""
+CSCC11 - Introduction to Machine Learning, Fall 2020, Assignment 2
+B. Chan, E. Franco, D. Fleet
+"""
+
+1. Is a single DT prone to over-fitting with the occupancy dataset?
+
+Yes, a single decision tree is prone to overfitting with the occupancy dataset as we get a low test accuracy for a single decision tree model.
+
+2. How does classification accuracy behave as a function of the number of trees?
+
+We can see classification accuracy increases as the number of trees increase but there comes a certain threshold/point after which, the accuracy starts to decline with the increase in number of trees. This is due to the idea of overfitting as more trees than required can manage to model the noise in the data which can make the classification accuracy decline. However, till that certain point is reached, increasing the number of trees increases our classification accuracy.
+
+3. Do you think the random forest was helpful?  Explain.
+
+Yes, I think that the random forest was helpful as it allows to negate or 'even out' the effects of overfitting. Taking multiple decision trees with a random subset of data and a random subset of features and averaging out the probability distribution over classes given by all the trees in our forests allows our model to make a very informed decision as the decision is based on many different ideas such as how different variables are interacting with different subsets of data and how those interactions affect the prediction. Setting hyper-parameters such as maximum tree depth and number of trees allows us to gain control over overfitting and allows us to tweak and improve our model.Random forests allow us to remove the effects of noise from our model.(This noise makes the model a bad predictor.) We can infer that the test accuracy with single decision tree model is much lower than the test accuracy given by a Random forest model which is more than 95%. All in all, I think the random forest was helpful as it was able to evaluate the training data in a more holistic way to improve the working of our model so that it can make accurate predictions. 
