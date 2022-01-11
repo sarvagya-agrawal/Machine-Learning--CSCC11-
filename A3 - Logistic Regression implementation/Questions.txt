@@ -1,0 +1,43 @@
+"""
+CSCC11 - Introduction to Machine Learning, Fall 2020, Assignment 3
+B. Chan, Z. Zhang, D. Fleet
+"""
+
+Answer The Following Questions:
+
+Visualization:
+1. Do you expect logistic regression to perform well on generic_1? Why?
+
+> Looking at the plot for the dataset, it can be seen that a the 2 classes can be separated quite clearly, i.e. we can see that the data is heavily leaning towards being linearly separable and then, we know that a linear Decision boundary exists. This tells us that Logistic regression won't perform well on generic_1 as with linearly separable data, logistic regression becomes numerically unstable.
+
+
+2. Do you expect logistic regression to perform well on generic_2? Why?
+
+> Looking at the plot for the dataset, it can be seen that the 2 classes cannot be clearly linearly separated, i.e. the data is not linearly separable, however, we still know that linear decision boundary exists. Therefore, yes, we expect that logistic regression will perform well as we linear DBs despite having non-linearly separable data.
+
+
+3. Why can’t we directly visualize the iris dataset? What are some ways to visualize it?
+
+> The iris data is 4-dimensional dataset, therefore, we don't have plots or the means as humans to visualize such a dataset directly given that our perception is limited to 3 dimensions. We can use dimensionality reduction techniques to make this plotting approachable. For example: PCA (principal component analysis).
+
+
+
+Analysis:
+1. Generic datasets: Does logistic regression perform well on these datasets? Do the actual results agree with your initial hypotheses?
+
+>The accuracies are low for generic_1 and iris and somewhat midrange (50 - 60%) for generic_2 which agree with my initial hypothesis for generic_1 and generic_2.
+
+2. Iris dataset: Does logistic regression do well on this dataset? If not, does regularization help?
+
+> No, Logistic regression does not do well on this dataset. No, Regularization does help. 
+
+3. What are the training and validation accuracies? Do they look reasonable? Explain.
+
+> For iris data: ~33%; For generic_1: ~25%, For generic_2: ~56%.
+Given that all datasets have a low amount of data to train on and test on, these accuracies look reasonable.
+
+
+Bonus: If your initial hypothesis disagrees with the result on generic_1 dataset, can you explain why that is the case?
+
+> My initial hypothesis being that logistic regression will perform well, which disagrees with result on generic_1. This is because it seems like regression will perform well because data is linearly separable, however, its the opposite case as linearly separable data makes logistic regression numerically unstable.
+
